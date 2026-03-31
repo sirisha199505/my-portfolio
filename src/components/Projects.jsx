@@ -10,7 +10,6 @@ const projects = [
     accent: 'orange',
     borderColor: 'border-orange-500/20',
     bgColor: 'bg-orange-500/5',
-    favicon: 'https://roti-lemon.vercel.app/favicon.ico',
     emoji: '🫓',
     features: ['Product Catalog', 'Cart System', 'User Auth', 'Order Management'],
 
@@ -27,7 +26,6 @@ const projects = [
     accent: 'rose',
     borderColor: 'border-rose-500/20',
     bgColor: 'bg-rose-500/5',
-    favicon: 'https://pandit-eta.vercel.app/favicon.ico',
     emoji: '🪔',
     features: ['Service Booking', 'Pandit Profiles', 'Location Search', 'Reviews'],
 
@@ -44,7 +42,6 @@ const projects = [
     accent: 'emerald',
     borderColor: 'border-emerald-500/20',
     bgColor: 'bg-emerald-500/5',
-    favicon: 'https://realestate-eosin-kappa.vercel.app/favicon.ico',
     emoji: '🏡',
     features: ['Property Listings', 'Advanced Filters', 'Map Integration', 'Contact Forms'],
 
@@ -73,25 +70,9 @@ function ProjectCard({ project, index }) {
 
           {/* Logo / icon */}
           <div
-            className={`w-20 h-20 rounded-2xl bg-gradient-to-br ${project.color} flex items-center justify-center mb-6 glow-sm overflow-hidden`}
+            className={`w-20 h-20 rounded-2xl bg-gradient-to-br ${project.color} flex items-center justify-center mb-6 glow-sm`}
           >
-            {project.favicon ? (
-              <img
-                src={project.favicon}
-                alt={`${project.title} logo`}
-                className="w-12 h-12 object-contain"
-                onError={(e) => {
-                  e.currentTarget.style.display = 'none'
-                  e.currentTarget.nextSibling.style.display = 'flex'
-                }}
-              />
-            ) : null}
-            <span
-              className="text-4xl"
-              style={{ display: project.favicon ? 'none' : 'flex' }}
-            >
-              {project.emoji}
-            </span>
+            <span className="text-4xl">{project.emoji}</span>
           </div>
 
           {/* Tech stack */}
