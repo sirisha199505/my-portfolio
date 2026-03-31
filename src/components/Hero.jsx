@@ -56,16 +56,16 @@ export default function Hero() {
 
       {/* ── Text content ── */}
       {/* Desktop: offset right of image; Mobile: normal flow below image */}
-      <div className="relative z-10 md:absolute md:top-20 md:left-0 md:right-0 md:bottom-0 md:flex md:flex-col md:justify-center md:pl-[50%] md:pr-16 px-6 pb-16 pt-4">
+      <div className="relative z-10 md:absolute md:top-40 md:left-0 md:right-0 md:bottom-0 md:flex md:flex-col md:justify-center md:pl-[50%] md:pr-16 px-6 pb-16 pt-4">
 
-        {/* Available badge */}
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-purple-500/30 bg-purple-500/10 text-purple-300 text-xs font-medium mb-8 w-fit">
-          <span className="w-1.5 h-1.5 bg-green-400 rounded-full animate-pulse" />
+        
+        {/* <div className="inline-flex items-center gap-2 px-0.5 py-0.5 rounded-full border border-purple-500/30 bg-purple-500/10 text-purple-300 text-xs font-medium mb-8 w-fit">
+          <span className="w-1.5 h-0.5 bg-green-400 rounded-full animate-pulse" />
           Available for new opportunities
-        </div>
+        </div> */}
 
         {/* Big bold name */}
-        <h1 className="font-black uppercase leading-none mb-6 text-white">
+        <h1 className="font-black uppercase leading-none mb-5 text-white">
           <span className="block text-4xl sm:text-5xl md:text-7xl lg:text-8xl gradient-text">Sirisha</span>
           <span className="block text-2xl sm:text-3xl md:text-5xl lg:text-6xl tracking-widest mt-1">Lakhanapuram</span>
         </h1>
