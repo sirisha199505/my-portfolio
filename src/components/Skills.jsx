@@ -34,7 +34,7 @@ const skillCategories = [
     bgColor: 'bg-cyan-500/8',
     skills: [
       { name: 'PostgreSQL', level: 75, icon: '🐘' },
-      { name: 'Git & GitHub', level: 85, icon: '🐙' },
+      { name: 'Git', level: 85, icon: '🐙' },
       { name: 'Vite', level: 80, icon: '⚡' },
     ],
   },
