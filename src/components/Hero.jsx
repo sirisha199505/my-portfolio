@@ -56,7 +56,7 @@ export default function Hero() {
 
       {/* ── Text content ── */}
       {/* Desktop: offset right of image; Mobile: normal flow below image */}
-      <div className="relative z-10 md:absolute md:inset-0 md:flex md:flex-col md:justify-center md:pl-[50%] md:pr-16 px-6 pb-16 pt-4 md:pt-24">
+      <div className="relative z-10 md:absolute md:top-20 md:left-0 md:right-0 md:bottom-0 md:flex md:flex-col md:justify-center md:pl-[50%] md:pr-16 px-6 pb-16 pt-4">
 
         {/* Available badge */}
         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-purple-500/30 bg-purple-500/10 text-purple-300 text-xs font-medium mb-8 w-fit">
