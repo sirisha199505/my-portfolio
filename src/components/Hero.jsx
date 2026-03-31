@@ -30,21 +30,33 @@ export default function Hero() {
   return (
     <section id="home" className="relative min-h-screen bg-[#0d0d0d] overflow-hidden">
 
-      {/* Full height image — left side, blends into dark bg on right edge */}
-      <div className="absolute left-0 top-0 h-full w-[45%]">
+      {/* ── Desktop layout: image pinned left ── */}
+      <div className="hidden md:block absolute left-0 top-0 h-full w-[45%]">
         <img
           src="/sirisha1.jpeg"
           alt="Sirisha Lakhanapuram"
           className="h-full w-full object-cover object-top"
         />
-        {/* Blend right edge of image into dark background */}
         <div className="absolute inset-y-0 right-0 w-40 bg-gradient-to-l from-[#0d0d0d] to-transparent" />
-        {/* Subtle top fade */}
         <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-[#0d0d0d] to-transparent" />
       </div>
 
-      {/* Text — right side, slightly overlaps the photo */}
-      <div className="relative z-10 min-h-screen flex flex-col justify-center pl-[50%] pr-8 md:pr-16 pt-24 pb-16">
+      {/* ── Mobile layout: image as top banner ── */}
+      <div className="md:hidden relative w-full h-72 sm:h-80">
+        <img
+          src="/sirisha1.jpeg"
+          alt="Sirisha Lakhanapuram"
+          className="w-full h-full object-cover object-top"
+        />
+        {/* fade bottom into page bg */}
+        <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#0d0d0d] to-transparent" />
+        {/* fade top for navbar */}
+        <div className="absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-[#0d0d0d] to-transparent" />
+      </div>
+
+      {/* ── Text content ── */}
+      {/* Desktop: offset right of image; Mobile: normal flow below image */}
+      <div className="relative z-10 md:absolute md:inset-0 md:flex md:flex-col md:justify-center md:pl-[50%] md:pr-16 px-6 pb-16 pt-4 md:pt-24">
 
         {/* Available badge */}
         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-purple-500/30 bg-purple-500/10 text-purple-300 text-xs font-medium mb-8 w-fit">
@@ -54,8 +66,8 @@ export default function Hero() {
 
         {/* Big bold name */}
         <h1 className="font-black uppercase leading-none mb-6 text-white">
-          <span className="block text-5xl md:text-7xl lg:text-8xl gradient-text">Sirisha</span>
-          <span className="block text-3xl md:text-5xl lg:text-6xl tracking-widest mt-1">Lakhanapuram</span>
+          <span className="block text-4xl sm:text-5xl md:text-7xl lg:text-8xl gradient-text">Sirisha</span>
+          <span className="block text-2xl sm:text-3xl md:text-5xl lg:text-6xl tracking-widest mt-1">Lakhanapuram</span>
         </h1>
 
         {/* Typing role */}
