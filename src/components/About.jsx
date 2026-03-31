@@ -17,7 +17,7 @@ const experiences = [
 
 export default function About() {
   return (
-    <section id="about" className="py-28 relative">
+    <section id="about" className="py-20 scroll-mt-20 relative">
       {/* Subtle background */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-20 right-0 w-72 h-72 bg-indigo-900/15 rounded-full blur-3xl" />

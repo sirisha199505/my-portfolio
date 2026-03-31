@@ -33,7 +33,11 @@ export default function Navbar() {
   const handleNav = (href) => {
     setMenuOpen(false)
     const id = href.replace('#', '')
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
+    const el = document.getElementById(id)
+    if (!el) return
+    const navHeight = 80
+    const top = el.getBoundingClientRect().top + window.scrollY - navHeight
+    window.scrollTo({ top, behavior: 'smooth' })
   }
 
   return (

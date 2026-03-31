@@ -155,7 +155,7 @@ function ProjectCard({ project, index }) {
 
 export default function Projects() {
   return (
-    <section id="projects" className="py-28 relative">
+    <section id="projects" className="py-20 scroll-mt-20 relative">
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/2 right-0 w-80 h-80 bg-violet-900/15 rounded-full blur-3xl" />
       </div>

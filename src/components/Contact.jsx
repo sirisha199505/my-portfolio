@@ -62,7 +62,7 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="py-28 relative">
+    <section id="contact" className="py-20 scroll-mt-20 relative">
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-900/15 rounded-full blur-3xl" />
         <div className="absolute top-0 left-0 w-72 h-72 bg-indigo-900/15 rounded-full blur-3xl" />

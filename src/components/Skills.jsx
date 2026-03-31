@@ -90,7 +90,7 @@ function SkillBar({ name, level, icon, color, delay = 0 }) {
 
 export default function Skills() {
   return (
-    <section id="skills" className="py-28 relative">
+    <section id="skills" className="py-20 scroll-mt-20 relative">
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-purple-900/15 rounded-full blur-3xl" />
       </div>

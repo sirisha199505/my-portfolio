@@ -10,7 +10,6 @@ export default function Hero() {
   useEffect(() => {
     const current = roles[roleIndex]
     let timeout
-
     if (typing) {
       if (displayed.length < current.length) {
         timeout = setTimeout(() => setDisplayed(current.slice(0, displayed.length + 1)), 80)
@@ -28,82 +27,66 @@ export default function Hero() {
     return () => clearTimeout(timeout)
   }, [displayed, typing, roleIndex])
 
-  const scrollToContact = () => {
-    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })
-  }
-  const scrollToProjects = () => {
-    document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })
-  }
-
   return (
-    <section
-      id="home"
-      className="relative min-h-screen flex items-center overflow-hidden"
-    >
+    <section id="home" className="relative min-h-screen flex items-center overflow-hidden bg-[#0a0a0f]">
+
       {/* Full background image */}
       <div className="absolute inset-0">
         <img
-          src="/sirisha1.jpeg"
+          src="/sirisha2.jpeg"
           alt=""
-          className="w-full h-full object-cover object-right"
+          className="w-full h-full object-cover object-top"
         />
-        {/* Dark overlay so text stays readable */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0a0a0f]/90 via-[#0a0a0f]/70 to-[#0a0a0f]/30" />
+        {/* Dark overlay for text readability */}
+        <div className="absolute inset-0 bg-[#0a0a0f]/70" />
       </div>
 
       {/* Content */}
-      <div className="relative max-w-6xl mx-auto px-6 pt-28 pb-16 w-full">
+      <div className="relative z-10 max-w-6xl mx-auto px-8 md:px-16 pt-28 pb-16 w-full">
         <div className="max-w-xl">
 
-          {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-purple-500/30 bg-purple-500/10 text-purple-300 text-sm font-medium mb-6 animate-fade-up">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-purple-500/30 bg-purple-500/10 text-purple-300 text-sm font-medium mb-6 w-fit animate-fade-up">
             <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
             Available for new opportunities
           </div>
 
-          {/* Greeting */}
-          <p className="text-slate-400 text-base font-medium mb-2 animate-fade-up font-code">
+          <p className="text-slate-400 text-base font-medium mb-2 font-code animate-fade-up">
             Hi there, I&apos;m
           </p>
 
-          {/* Name */}
-          <h1 className="text-5xl md:text-6xl font-black mb-4 animate-fade-up leading-tight">
+          <h1 className="text-5xl md:text-6xl font-black mb-4 leading-tight animate-fade-up">
             <span className="gradient-text">Sirisha</span>
             <br />
             <span className="text-white text-2xl md:text-3xl font-bold tracking-wide">Lakhanapuram</span>
           </h1>
 
-          {/* Typing role */}
           <div className="text-xl md:text-2xl font-semibold text-slate-300 mb-4 h-9 animate-fade-up">
             <span>{displayed}</span>
             <span className="cursor text-purple-400">|</span>
           </div>
 
-          {/* Tagline */}
-          <p className="text-slate-300 text-base leading-relaxed mb-8 animate-fade-up">
+          <p className="text-slate-400 text-base leading-relaxed mb-8 animate-fade-up">
             Crafting elegant, performant web experiences with modern technologies.
             I turn ideas into{' '}
             <span className="text-purple-400 font-semibold">beautiful, functional products</span>.
           </p>
 
-          {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 animate-fade-up mb-12">
             <button
-              onClick={scrollToProjects}
-              className="px-7 py-3.5 rounded-full font-semibold bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white transition-all duration-200 glow text-sm"
+              onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
+              className="px-7 py-3.5 rounded-full font-semibold bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white transition-all duration-200 glow text-sm w-fit"
             >
               View My Work
             </button>
             <button
-              onClick={scrollToContact}
-              className="px-7 py-3.5 rounded-full font-semibold border border-white/30 text-white hover:border-purple-400 hover:text-purple-300 transition-all duration-200 text-sm"
+              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+              className="px-7 py-3.5 rounded-full font-semibold border border-purple-500/40 text-slate-300 hover:border-purple-400 hover:text-purple-300 transition-all duration-200 text-sm w-fit"
             >
               Get In Touch
             </button>
           </div>
 
-          {/* Stats */}
-          <div className="flex gap-10">
+          <div className="flex gap-10 animate-fade-up">
             {[
               { value: '3+', label: 'Projects Built' },
               { value: '5+', label: 'Technologies' },
@@ -111,23 +94,14 @@ export default function Hero() {
             ].map(({ value, label }) => (
               <div key={label}>
                 <div className="text-2xl font-black gradient-text">{value}</div>
-                <div className="text-xs text-slate-400 mt-0.5 font-medium">{label}</div>
+                <div className="text-xs text-slate-500 mt-0.5 font-medium">{label}</div>
               </div>
             ))}
           </div>
-        </div>
 
-        {/* Scroll indicator */}
-        <div className="mt-12 flex">
-          <button
-            onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
-            className="flex flex-col items-center gap-2 text-slate-500 hover:text-slate-300 transition-colors group"
-          >
-            <span className="text-xs font-medium tracking-widest uppercase">Scroll</span>
-            <div className="w-px h-8 bg-gradient-to-b from-slate-500 to-transparent group-hover:from-purple-400 transition-colors" />
-          </button>
         </div>
       </div>
+
     </section>
   )
 }
