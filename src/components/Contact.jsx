@@ -199,7 +199,7 @@ export default function Contact() {
 
               {status === 'sent' && (
                 <p className="text-center text-sm text-emerald-400">
-                  ✓ Thanks! I&apos;ll get back to you soon.
+                  ✓ Thanks! I&apos;ll get back within 24 hours
                 </p>
               )}
               {status === 'error' && (
