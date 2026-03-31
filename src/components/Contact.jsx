@@ -2,7 +2,7 @@ import { useState, useRef } from 'react'
 import emailjs from '@emailjs/browser'
 
 // ─── Replace these with your EmailJS credentials ───────────────────────────
-const EMAILJS_SERVICE_ID  = 'service_hsf26eg'
+const EMAILJS_SERVICE_ID  = 'service_abs7w0k'
 const EMAILJS_TEMPLATE_ID = 'template_l5od8ml'
 const EMAILJS_PUBLIC_KEY  = 'ZJpkh3f8r6zktzLQu'
 // ───────────────────────────────────────────────────────────────────────────
