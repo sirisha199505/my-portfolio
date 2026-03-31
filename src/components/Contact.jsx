@@ -1,4 +1,11 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
+import emailjs from '@emailjs/browser'
+
+// ─── Replace these with your EmailJS credentials ───────────────────────────
+const EMAILJS_SERVICE_ID  = 'service_hsf26eg'
+const EMAILJS_TEMPLATE_ID = 'template_l5od8ml'
+const EMAILJS_PUBLIC_KEY  = 'ZJpkh3f8r6zktzLQu'
+// ───────────────────────────────────────────────────────────────────────────
 
 const socialLinks = [
   {
@@ -14,6 +21,7 @@ const socialLinks = [
 ]
 
 export default function Contact() {
+  const formRef = useRef()
   const [form, setForm] = useState({ name: '', email: '', subject: '', message: '' })
   const [status, setStatus] = useState(null) // 'sending' | 'sent' | 'error'
 
@@ -24,11 +32,15 @@ export default function Contact() {
   const handleSubmit = (e) => {
     e.preventDefault()
     setStatus('sending')
-    // Simulate send (replace with real API call)
-    setTimeout(() => {
-      setStatus('sent')
-      setForm({ name: '', email: '', subject: '', message: '' })
-    }, 1500)
+
+    emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, formRef.current, EMAILJS_PUBLIC_KEY)
+      .then(() => {
+        setStatus('sent')
+        setForm({ name: '', email: '', subject: '', message: '' })
+      })
+      .catch(() => {
+        setStatus('error')
+      })
   }
 
   return (
@@ -116,6 +128,7 @@ export default function Contact() {
           {/* Right – Contact form */}
           <div className="lg:col-span-3">
             <form
+              ref={formRef}
               onSubmit={handleSubmit}
               className="bg-white/3 border border-white/8 rounded-2xl p-8 flex flex-col gap-5"
             >
@@ -181,16 +194,17 @@ export default function Contact() {
                 disabled={status === 'sending' || status === 'sent'}
                 className="w-full py-4 rounded-xl font-semibold text-white bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 disabled:opacity-60 disabled:cursor-not-allowed transition-all glow-sm"
               >
-                {status === 'sending'
-                  ? 'Sending...'
-                  : status === 'sent'
-                  ? '✓ Message Sent!'
-                  : 'Send Message'}
+                {status === 'sending' ? 'Sending...' : status === 'sent' ? '✓ Message Sent!' : 'Send Message'}
               </button>
 
               {status === 'sent' && (
                 <p className="text-center text-sm text-emerald-400">
-                  Thanks! I&apos;ll get back to you soon.
+                  ✓ Thanks! I&apos;ll get back to you soon.
+                </p>
+              )}
+              {status === 'error' && (
+                <p className="text-center text-sm text-red-400">
+                  Something went wrong. Please try again or email directly.
                 </p>
               )}
             </form>
