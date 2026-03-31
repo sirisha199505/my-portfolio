@@ -2,14 +2,14 @@ const experiences = [
   {
     role: 'Full Stack Developer',
     company: 'Freelance / Projects',
-    period: '2023 – Present',
+    period: '2024 - Present',
     description:
       'Building full-stack web applications using React, Ruby (Roda), and PostgreSQL. Delivered multiple client projects focusing on performance and UX.',
   },
   {
     role: 'Frontend Developer',
     company: 'Personal Projects',
-    period: '2022 – 2023',
+    period: '2023 - 2024',
     description:
       'Developed responsive, accessible user interfaces using React and Tailwind CSS, with a focus on clean design and smooth interactions.',
   },
