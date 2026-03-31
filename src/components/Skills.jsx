@@ -22,7 +22,7 @@ const skillCategories = [
     bgColor: 'bg-violet-500/8',
     skills: [
       { name: 'Ruby', level: 78, icon: '💎' },
-      { name: 'Roda Framework', level: 72, icon: '🛤️' },
+      { name: 'Roda Framework', level: 78, icon: '🛤️' },
       { name: 'REST APIs', level: 80, icon: '🔌' },
     ],
   },
@@ -33,7 +33,7 @@ const skillCategories = [
     borderColor: 'border-cyan-500/25',
     bgColor: 'bg-cyan-500/8',
     skills: [
-      { name: 'PostgreSQL', level: 75, icon: '🐘' },
+      { name: 'PostgreSQL', level: 80, icon: '🐘' },
       { name: 'Git', level: 85, icon: '🐙' },
       { name: 'Vite', level: 80, icon: '⚡' },
     ],
