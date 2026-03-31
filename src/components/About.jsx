@@ -35,8 +35,8 @@ export default function About() {
           {/* Left – Bio */}
           <div>
             {/* Avatar placeholder */}
-            <div className="w-48 h-48 mx-auto lg:mx-0 mb-8 rounded-2xl bg-gradient-to-br from-purple-600 to-indigo-600 flex items-center justify-center glow relative overflow-hidden">
-              <span className="text-7xl font-black text-white select-none">S</span>
+            <div className="w-35 h-35 mx-auto lg:mx-0 mb-8 rounded-2xl bg-gradient-to-br from-purple-600 to-indigo-600 flex items-center justify-center glow relative overflow-hidden">
+              <span className="text-5xl font-black text-white select-none">S</span>
               <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent" />
             </div>
 
