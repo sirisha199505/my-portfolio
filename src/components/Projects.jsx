@@ -33,6 +33,21 @@ const projects = [
   },
   {
     id: 3,
+    title: 'CraveBetter',
+    tagline: 'Healthy Can Be Tasty Too',
+    description:
+      '"Healthy isn\'t tasty and tasty isn\'t healthy" — we built Crave Better to prove that wrong. A protein bar e-commerce platform featuring 5g protein bars, product listings, cart management, and a seamless checkout experience.',
+    tech: ['React', 'JavaScript'],
+    color: 'from-violet-500 to-purple-500',
+    accent: 'violet',
+    borderColor: 'border-violet-500/20',
+    bgColor: 'bg-violet-500/5',
+    emoji: '💪',
+    features: ['Product Listing', 'Cart System', 'Checkout', 'Nutrition Info'],
+    live: 'https://cravebetter4u.com/',
+  },
+  {
+    id: 4,
     title: 'Real Estate App',
     tagline: 'Property Listing & Search Platform',
     description:
