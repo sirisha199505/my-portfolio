@@ -37,7 +37,7 @@ const projects = [
     tagline: 'Healthy Can Be Tasty Too',
     description:
       '"Healthy isn\'t tasty and tasty isn\'t healthy" — we built Crave Better to prove that wrong. A protein bar e-commerce platform featuring 5g protein bars, product listings, cart management, and a seamless checkout experience.',
-    tech: ['React', 'JavaScript'],
+    tech: ['React', 'JavaScript','PostgreSQL','Tailwind CSS', 'Ruby', 'Roda'],
     color: 'from-violet-500 to-purple-500',
     accent: 'violet',
     borderColor: 'border-violet-500/20',
