@@ -62,6 +62,21 @@ const projects = [
 
     live: 'https://realestate-eosin-kappa.vercel.app/',
   },
+  {
+    id: 5,
+    title: 'SohamQuiz',
+    tagline: 'Test Your Knowledge, One Quiz at a Time',
+    description:
+      'An interactive quiz web application built with React. Users can attempt multiple-choice quizzes, track their scores, and challenge themselves across various topics with a clean and engaging UI.',
+    tech: ['React', 'Java', 'Tailwind CSS', 'Ruby', 'Roda', 'PostgreSQL'],
+    color: 'from-sky-500 to-blue-500',
+    accent: 'sky',
+    borderColor: 'border-sky-500/20',
+    bgColor: 'bg-sky-500/5',
+    emoji: '🧠',
+    features: ['Multiple Choice', 'Score Tracking', 'Topic Categories', 'Instant Feedback'],
+    live: 'https://soham-2-seven.vercel.app/',
+  },
 ]
 
 function ProjectCard({ project, index }) {
