@@ -77,6 +77,96 @@ const projects = [
     features: ['Multiple Choice', 'Score Tracking', 'Topic Categories', 'Instant Feedback'],
     live: 'https://soham-2-seven.vercel.app/',
   },
+  {
+    id: 6,
+    title: 'Daikin',
+    tagline: 'Cooling Solutions, Beautifully Presented',
+    description:
+      'A product showcase website for Daikin air conditioning systems. Visitors can browse models by category and capacity, compare specifications side by side, and submit enquiries directly to the sales team.',
+    tech: ['React', 'JavaScript', 'Tailwind CSS'],
+    color: 'from-cyan-500 to-blue-500',
+    accent: 'cyan',
+    borderColor: 'border-cyan-500/20',
+    bgColor: 'bg-cyan-500/5',
+    emoji: '❄️',
+    features: ['Product Catalog', 'Spec Comparison', 'Enquiry Forms', 'Responsive Design'],
+    live: '',
+  },
+  {
+    id: 7,
+    title: 'Himalayan Furniture Mart',
+    tagline: 'Handcrafted Furniture, Online',
+    description:
+      'An online furniture store bringing a physical showroom to the web. Features category-wise product browsing, detailed product galleries, cart management, and an enquiry-to-order flow for custom pieces.',
+    tech: ['React', 'JavaScript', 'Tailwind CSS', 'Ruby', 'PostgreSQL'],
+    color: 'from-amber-500 to-yellow-500',
+    accent: 'amber',
+    borderColor: 'border-amber-500/20',
+    bgColor: 'bg-amber-500/5',
+    emoji: '🪑',
+    features: ['Product Showroom', 'Category Browsing', 'Cart System', 'Custom Enquiries'],
+    live: '',
+  },
+  {
+    id: 8,
+    title: 'Clarus Partner',
+    tagline: 'Advisory Services, Clearly Communicated',
+    description:
+      'A professional services website for Clarus Partner, built to present advisory offerings with clarity. Includes structured service pages, team profiles, case study highlights, and lead capture forms.',
+    tech: ['React', 'JavaScript', 'Tailwind CSS'],
+    color: 'from-blue-500 to-indigo-500',
+    accent: 'blue',
+    borderColor: 'border-blue-500/20',
+    bgColor: 'bg-blue-500/5',
+    emoji: '🤝',
+    features: ['Service Pages', 'Team Profiles', 'Case Studies', 'Lead Capture'],
+    live: '',
+  },
+  {
+    id: 9,
+    title: 'Clarus Pvt Ltd',
+    tagline: 'Corporate Identity on the Web',
+    description:
+      'The corporate web presence for Clarus Pvt Ltd, covering company overview, business verticals, and client-facing information. Designed for fast load times and a polished, trustworthy first impression.',
+    tech: ['React', 'JavaScript', 'Tailwind CSS'],
+    color: 'from-indigo-500 to-violet-500',
+    accent: 'indigo',
+    borderColor: 'border-indigo-500/20',
+    bgColor: 'bg-indigo-500/5',
+    emoji: '🏢',
+    features: ['Company Profile', 'Business Verticals', 'Contact Forms', 'SEO Ready'],
+    live: '',
+  },
+  {
+    id: 10,
+    title: 'Vaachika Lakhini',
+    tagline: 'Where Words Find Their Voice',
+    description:
+      'A web platform built around spoken and written expression — presenting services and content in a clean, reader-first layout with session enquiry and contact flows for interested clients.',
+    tech: ['React', 'JavaScript', 'Tailwind CSS'],
+    color: 'from-fuchsia-500 to-pink-500',
+    accent: 'fuchsia',
+    borderColor: 'border-fuchsia-500/20',
+    bgColor: 'bg-fuchsia-500/5',
+    emoji: '🎙️',
+    features: ['Content Showcase', 'Service Listing', 'Enquiry Flow', 'Mobile First'],
+    live: '',
+  },
+  {
+    id: 11,
+    title: 'THIS',
+    tagline: 'The Honest Indian Snack',
+    description:
+      'An e-commerce storefront for a clean-label Indian snack brand. Shoppers browse the range, read honest ingredient and nutrition details, and move through a frictionless cart-to-checkout flow.',
+    tech: ['React', 'JavaScript', 'Tailwind CSS', 'Ruby', 'Roda', 'PostgreSQL'],
+    color: 'from-lime-500 to-green-500',
+    accent: 'lime',
+    borderColor: 'border-lime-500/20',
+    bgColor: 'bg-lime-500/5',
+    emoji: '🥨',
+    features: ['Product Listing', 'Ingredient Details', 'Cart System', 'Checkout'],
+    live: '',
+  },
 ]
 
 function ProjectCard({ project, index }) {
@@ -132,7 +222,7 @@ function ProjectCard({ project, index }) {
       {/* Content */}
       <div className={`${!isEven ? 'lg:col-start-1 lg:row-start-1' : ''}`}>
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-slate-500 text-xs font-code mb-4">
-          Project 0{project.id}
+          Project {String(project.id).padStart(2, '0')}
         </div>
 
         <h3 className="text-3xl md:text-4xl font-black text-white mb-3">{project.title}</h3>
@@ -143,16 +233,18 @@ function ProjectCard({ project, index }) {
         </p>
         <p className="text-slate-400 leading-relaxed mb-8">{project.description}</p>
 
-        <div className="flex gap-4">
-          <a
-            href={project.live}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={`px-6 py-3 rounded-full font-semibold text-sm text-white bg-gradient-to-r ${project.color} hover:opacity-90 transition-opacity glow-sm`}
-          >
-            Live Demo →
-          </a>
-        </div>
+        {project.live && (
+          <div className="flex gap-4">
+            <a
+              href={project.live}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`px-6 py-3 rounded-full font-semibold text-sm text-white bg-gradient-to-r ${project.color} hover:opacity-90 transition-opacity glow-sm`}
+            >
+              Live Demo →
+            </a>
+          </div>
+        )}
       </div>
     </div>
   )
